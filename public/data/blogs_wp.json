@@ -1,0 +1,24 @@
+[
+  {
+    "ImageURL": "/images/A1.png",
+    "title": "LinkedIn",
+    "text": "We at Zensar believe in disrupting the status quo through innovation and velocity.",
+    "link": "https://www.zensar.com/careers/",
+    "HideItem": "false"
+  },
+  {
+    "ImageURL": "/images/A2.png",
+    "title": "Instagram",
+    "text": "We at Zensar believe in disrupting the status quo through innovation and velocity.",
+    "link": "https://www.zensar.com/about/our-story/",
+    "HideItem": "false"
+  },
+  {
+    "ImageURL": "/images/A2.png",
+    "title": "Zenlab",
+    "text": "We at Zensar believe in disrupting the status quo through innovation and velocity. ",
+    "link": "https://www.zensar.com/contact/",
+    "HideItem": "false"
+
+  }
+]
