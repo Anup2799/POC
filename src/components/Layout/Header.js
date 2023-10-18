@@ -67,12 +67,12 @@ const Header = () => {
           <>
             <li>
               <NavLink to="/pages/Patents" style={{ textDecoration: "none" }}>
-                <strong>Patents</strong>
+                <strong>Patents &gt;&gt;</strong>
               </NavLink>
             </li>
             <li>
               <NavLink to="/pages/Whitepapers" style={{ textDecoration: "none" }}>
-                <strong>Whitepapers & Blogs</strong>
+                <strong>Whitepapers & Blogs &gt;&gt;</strong>
               </NavLink>
             </li>
           </>
@@ -148,7 +148,7 @@ const Header = () => {
                 onMouseLeave={handlePublicationMouseLeave}
                 style={{ cursor: "pointer" }}
               >
-                <strong>Publications</strong>
+                <strong>Publications </strong>
                 <Menu
                   anchorEl={publicationAnchor}
                   open={Boolean(publicationAnchor)}
@@ -165,12 +165,12 @@ const Header = () => {
                 >
                   <MenuItem onClick={handlePublicationClose}>
                     <NavLink to="/pages/Patents" style={{ textDecoration: "none" }}>
-                      <strong>Patents</strong>
+                      <strong>Patents &gt;&gt;</strong>
                     </NavLink>
                   </MenuItem>
                   <MenuItem onClick={handlePublicationClose}>
                     <NavLink to="/pages/Whitepapers" style={{ textDecoration: "none" }}>
-                      <strong>Whitepapers & Blogs</strong>
+                      <strong>Whitepapers & Blogs &gt;&gt;</strong>
                     </NavLink>
                   </MenuItem>
                 </Menu>
