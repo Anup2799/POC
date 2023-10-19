@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 
 import {
   Typography,
-  Button,
   Card,
   CardContent,
-  CardActions,
   CardMedia,
   Container,
   Grid,
   Modal,
   TextField,
   IconButton,
+  Button, // Import Button component
+  CardActions, // Import CardActions component
 } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
@@ -85,8 +85,6 @@ const Home = () => {
 
   const [searchInput, setSearchInput] = useState("");
 
-  const [showAllCards, setShowAllCards] = useState(false);
-
   const navigate = useNavigate();
 
   const fetchMenuData = () => {
@@ -134,15 +132,8 @@ const Home = () => {
     navigate("/home");
   };
 
-  const handleShowAllClick = () => {
-    setShowAllCards(true);
-  };
-
   const filteredMenuList = menuList.filter((menu) => {
-    return (
-      (showAllCards || menu.HideItem === "false") &&
-      menu.Title.toLowerCase().includes(searchInput.toLowerCase())
-    );
+    return menu.Title.toLowerCase().includes(searchInput.toLowerCase());
   });
 
   return (
@@ -155,25 +146,6 @@ const Home = () => {
             filteredMenuList={filteredMenuList}
           />
         </Container>
-
-        {!showAllCards && ( // Conditionally render the button when showAllCards is false
-          <Container
-            style={{
-              paddingTop: "20px",
-              paddingBottom: "20px",
-              paddingLeft: "43%",
-            }}
-          >
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleShowAllClick}
-              style={{ margin: "auto", fontWeight: "bold" }}
-            >
-              Show All Hide NFT
-            </Button>
-          </Container>
-        )}
 
         <Container style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <Grid container spacing={2}>
