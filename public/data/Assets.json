@@ -58,7 +58,7 @@
     "DemoURL": "DemoURLs/InfraDemoURL.html",
     "Details": "As part of Zensar's own Digital Finance initiatives, the Finance Team was keen to improve and track sub-contractor lifecycle management, which was identified as an area that lacked traceability, leading to cost leakages and audit & compliance challenges. Zensar adopted an enterprise Blockchain-based implementation, deployed internally, to enable full traceability for the lifecycle of a sub-contractor, given a higher than industry average of sub-contractors being deployed on projects. The solution provided an intelligent middleware using Hyperledger Fabric as a secure, permissioned Blockchain within the enterprise, using smart contracts for auto-enforcement and auditability. The solution enabled data transparency and visibility across entities (such as project management, talent management, etc.) in the value chain, significantly reducing the need for reconciliations, improving process efficiencies by an order of magnitude. The live system has helped the Finance Team to reduce revenue leakages through accurate billing for sub-contractor efforts.",
     "IconURL":"logo/tag.png",
-    "Tags": "hyperledger,  fabric, private, blockchain, permissioned",
+    "Tags": "hyperledger,  fabric, private, blockchain, permissioned,ethereum,  public, blockchain, digital collectible, platform, solution partner, erc721, openzepellin, opensea,",
     "TechTags": "mean stack, apis, nodejs, couchdb, fabric/network, smart contracts, chaincode, private cloud, docker, container",
     "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
     "HideItem": "false"
@@ -74,7 +74,7 @@
     "DemoURL": "DemoURLs/InfraDemoURL.html",
     "Details": "Following Zensar's own implementation of enterprise blockchain-based middleware for tracking sub-contractor lifecycle management, Zensar's Blockchain Team was selected to implement a blockchain-based solution for a Global Non-profit, to enable global capacity mapping [of volunteers], creating visibility into global and local pools.\n\nThe solution was designed to enable improved visibility of country-specific capacities of volunteer pools, yet allowing individual country offices to maintain their autonomy and controls on the local skill capacities, but facilitate the sourcing from global capacity pools.\n\nThe secure, transparent and permissioned blockchain solution, based on Zensar's Blockchain-based middleware solution was initially piloted across APAC & Australia, with a plan to roll it out across 180+ countries, as per the client's roadmap. The expected scale of operation for the solution over the course of its rollout was global, helping to drive impactful efficiencies and savings in the operations.",
     "IconURL":"logo/tag.png",
-    "Tags": "hyperledger,  fabric, private, blockchain, permissioned",
+    "Tags": "hyperledger,  fabric, private, blockchain, permissioned,ethereum,  public, blockchain, digital collectible, platform, solution partner, erc721, openzepellin, opensea,",
     "TechTags": "mean stack, apis, nodejs, couchdb, fabric/network, smart contracts, chaincode, private cloud, docker, container",
     "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
     "HideItem": "false"
@@ -89,7 +89,7 @@
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
     "DemoURL": "DemoURLs/Hum1DemoURL.html",
     "IconURL":"logo/tag.png",
-    "Tags": "hyperledger,  fabric, private, blockchain, permissioned",
+    "Tags": "hyperledger,  fabric, private, blockchain, permissioned,ethereum,  public, blockchain, digital collectible, platform, solution partner, erc721, openzepellin, opensea,",
     "Details": "The solution was developed using permissioned Blockchain - Hyperledger Fabric, smart contract/chain-code based automation, data privacy and controls using policies and PDCs; the solution was deployed on private and public cloud using Docker/Kubernetes containerization options.",
     "TechTags": "mean stack, apis, nodejs, couchdb, fabric/network, smart contracts, chaincode, private cloud, aws cloud, docker, kubernetes, pdc, private data collection, container",
     "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",

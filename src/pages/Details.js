@@ -24,25 +24,11 @@ const Details = ({ selectedCard }) => {
     ImageURL,
     Details,
     IconURL,
+    Tags,
     TechTags,
     VideoURL,
     DemoURL,
   } = selectedCard;
-
-  // Styling for the "Video" and "Demo" buttons
-  const buttonStyle = {
-    backgroundColor: "transparent",
-    color: "#007bff",
-    flex: 1,
-    padding: "8px 12px", // Adjust the padding to control the width
-    fontSize: "14px",
-    textTransform: "capitalize",
-    border: "2px solid #007bff",
-    fontWeight: "bold",
-    borderRadius: "12px",
-    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
-    margin: "8px",
-  };
 
   return (
     <div style={{ background: "#f0f0f0", overflowY: "auto", height: "100vh" }}>
@@ -57,7 +43,7 @@ const Details = ({ selectedCard }) => {
               <CardMedia
                 style={{
                   position: "relative",
-                  paddingBottom: "56.25%",
+                  paddingBottom: "56.25%", // 16:9 aspect ratio
                 }}
                 image={ImageURL}
                 title={Title}
@@ -69,8 +55,8 @@ const Details = ({ selectedCard }) => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    borderRadius: "12px",
-                    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+                    borderRadius: "12px", // Rounded-rectangle edge
+                    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)", // Box shadow for 3D effect
                   }}
                 ></div>
               </CardMedia>
@@ -123,6 +109,28 @@ const Details = ({ selectedCard }) => {
                       <span style={{ fontWeight: "bold", color: "black" }}>
                         Tags -
                       </span>{" "}
+                      {Tags.split(",").map((tag, index) => (
+                        <span key={index}>
+                          <Link
+                            href={`#${tag.trim()}`}
+                            style={{ color: "#007bff" }}
+                          >
+                            {tag.trim()}
+                          </Link>
+                          {index <Tags.split(",").length - 1 ? ", " : ""}
+                        </span>
+                      ))}
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box display="flex" alignItems="center">
+                  <img src={IconURL} alt={Title} style={{ maxWidth: "100%" }} />
+                  <Box marginTop={2} marginLeft={2}>
+                    <Typography variant="body2" color="textSecondary">
+                      <span style={{ fontWeight: "bold", color: "black" }}>
+                        TechTags -
+                      </span>{" "}
                       {TechTags.split(",").map((tag, index) => (
                         <span key={index}>
                           <Link
@@ -145,23 +153,33 @@ const Details = ({ selectedCard }) => {
                 padding="16px"
                 alignItems="center"
               >
-                {/* "Video" button */}
                 <Button
                   size="small"
                   href={VideoURL}
                   target="_blank"
-                  style={buttonStyle}
+                  style={{
+                    backgroundColor: "#007bff",
+                    color: "white",
+                    flex: 1,
+                    padding: "12px",
+                    fontSize: "16px",
+                    textTransform: "capitalize",
+                  }}
                 >
                   Video
                 </Button>
 
-                {/* "Demo" button */}
                 <Button
                   size="small"
                   href={DemoURL}
                   style={{
-                    ...buttonStyle,
-                    marginRight: "8px",
+                    backgroundColor: "#007bff",
+                    color: "white",
+                    flex: 1,
+                    marginLeft: "8px",
+                    padding: "12px",
+                    fontSize: "16px",
+                    textTransform: "capitalize",
                   }}
                 >
                   Demo
