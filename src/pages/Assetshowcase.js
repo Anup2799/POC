@@ -2,33 +2,29 @@ import React, { useState, useEffect } from "react";
 
 import {
   Typography,
+  Button,
   Card,
   CardContent,
+  CardActions,
   CardMedia,
   Container,
   Grid,
   Modal,
   TextField,
   IconButton,
-  Button, // Import Button component
-  CardActions, // Import CardActions component
 } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 
 import { useNavigate } from "react-router-dom";
 
-import Footer from "../components/Layout/Footer";
-
 import Layout from "../components/Layout/Layout";
 
 import Details from "./Details";
 
-const SearchBox = ({
-  searchInput,
-  handleSearchInputChange,
-  filteredMenuList,
-}) => {
+import Footer from "../components/Layout/Footer";
+
+const SearchBox = ({ searchInput, handleSearchInputChange }) => {
   return (
     <Grid container alignItems="center" justifyContent="space-between">
       <Grid item>
@@ -39,7 +35,7 @@ const SearchBox = ({
 
             paddingBottom: "10px",
 
-            textAlign: "center",
+            textAlign: "left",
 
             padding: "5px",
 
@@ -77,6 +73,8 @@ const SearchBox = ({
 };
 
 const Home = () => {
+  const [filteredMenu, setFilteredMenu] = useState([]);
+
   const [menuList, setMenuList] = useState([]);
 
   const [selectedCard, setSelectedCard] = useState(null);
@@ -87,12 +85,16 @@ const Home = () => {
 
   const navigate = useNavigate();
 
+  const [visibleItemCount, setVisibleItemCount] = useState(0);
+
   const fetchMenuData = () => {
     fetch("data/Assets.json")
       .then((response) => response.json())
 
       .then((data) => {
         setMenuList(data);
+
+        setFilteredMenu(data);
       })
 
       .catch((error) => {
@@ -104,10 +106,22 @@ const Home = () => {
     fetchMenuData();
   }, []);
 
+  useEffect(() => {
+    setVisibleItemCount(
+      filteredMenu.filter((menu) => menu.HideItem === "false").length
+    );
+  }, [filteredMenu]);
+
   const handleSearchInputChange = (event) => {
     const inputValue = event.target.value;
 
     setSearchInput(inputValue);
+
+    const filteredItems = menuList.filter((menu) =>
+      menu.Title.toLowerCase().startsWith(inputValue.toLowerCase().slice(0, 3))
+    );
+
+    setFilteredMenu(filteredItems);
   };
 
   const handleCardHover = (event) => {
@@ -119,22 +133,18 @@ const Home = () => {
   };
 
   const handleDetailsClick = (menu) => {
-    setSelectedCard(menu);
+    if (menu.HideItem === "false") {
+      setSelectedCard(menu);
 
-    setDetailsVisible(true);
+      setDetailsVisible(true);
+    }
   };
 
   const handleCloseModal = () => {
     setDetailsVisible(false);
 
-    setSelectedCard(null);
-
     navigate("/home");
   };
-
-  const filteredMenuList = menuList.filter((menu) => {
-    return menu.Title.toLowerCase().includes(searchInput.toLowerCase());
-  });
 
   return (
     <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
@@ -143,124 +153,132 @@ const Home = () => {
           <SearchBox
             searchInput={searchInput}
             handleSearchInputChange={handleSearchInputChange}
-            filteredMenuList={filteredMenuList}
           />
+
+          <Typography variant="body2">
+            Showing {visibleItemCount} assets :
+          </Typography>
         </Container>
 
         <Container style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <Grid container spacing={2}>
-            {filteredMenuList.map((menu) => (
-              <Grid
-                item
-                key={menu.ID}
-                xs={12}
-                sm={6}
-                md={6}
-                style={{ marginBottom: "10px" }}
-              >
-                <Card
-                  style={{
-                    borderRadius: "15px",
-
-                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
-
-                    margin: "10px",
-                  }}
-                  onMouseEnter={handleCardHover}
-                  onMouseLeave={handleCardLeave}
-                >
-                  <CardMedia
-                    style={{ paddingTop: "56.25%" }}
-                    image={menu.ImageURL}
-                    title={menu.Title}
-                  />
-
-                  <CardContent style={{ padding: "10px", marginBottom: "0" }}>
-                    <Typography
-                      gutterBottom
-                      variant="body2"
-                      component="div"
+            {filteredMenu.map(
+              (menu) =>
+                menu.HideItem === "false" && (
+                  <Grid
+                    item
+                    key={menu.ID}
+                    xs={12}
+                    sm={6}
+                    md={6}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <Card
                       style={{
-                        fontWeight: "bold",
+                        borderRadius: "15px",
 
-                        color: "black",
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
 
-                        whiteSpace: "nowrap",
-
-                        overflow: "hidden",
-
-                        textOverflow: "ellipsis",
+                        margin: "10px",
                       }}
+                      onMouseEnter={handleCardHover}
+                      onMouseLeave={handleCardLeave}
                     >
-                      {menu.Title}
-                    </Typography>
+                      <CardMedia
+                        style={{ paddingTop: "56.25%" }}
+                        image={menu.ImageURL}
+                        title={menu.Title}
+                      />
 
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      style={{ margin: "5px 0" }}
-                    >
-                      {menu.Type}
-                    </Typography>
+                      <CardContent
+                        style={{ padding: "10px", marginBottom: "0" }}
+                      >
+                        <Typography
+                          gutterBottom
+                          variant="body2"
+                          component="div"
+                          style={{
+                            fontWeight: "bold",
 
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      style={{ margin: "5px 0" }}
-                    >
-                      Summary - {menu.Summary}
-                    </Typography>
-                  </CardContent>
+                            color: "black",
 
-                  <CardActions style={{ padding: "5px", marginTop: "5px" }}>
-                    <Button
-                      size="small"
-                      onClick={() => handleDetailsClick(menu)}
-                      style={{
-                        backgroundColor: "transparent",
+                            whiteSpace: "nowrap",
 
-                        color: "#007bff",
+                            overflow: "hidden",
 
-                        borderRadius: "20px",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {menu.Title}
+                        </Typography>
 
-                        margin: "5px",
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          style={{ margin: "5px 0" }}
+                        >
+                          {menu.Type}
+                        </Typography>
 
-                        textTransform: "none",
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          style={{ margin: "5px 0" }}
+                        >
+                          Summary - {menu.Summary}
+                        </Typography>
+                      </CardContent>
 
-                        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                      <CardActions style={{ padding: "5px", marginTop: "5px" }}>
+                        <Button
+                          size="small"
+                          onClick={() => handleDetailsClick(menu)}
+                          style={{
+                            backgroundColor: "transparent",
 
-                        border: "2px solid #007bff",
+                            color: "#007bff",
 
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Details
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+                            borderRadius: "20px",
+
+                            margin: "5px",
+
+                            textTransform: "none",
+
+                            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+
+                            border: "2px solid #007bff",
+
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Details
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                )
+            )}
           </Grid>
         </Container>
+
+        <Modal open={detailsVisible} onClose={handleCloseModal}>
+          <div style={{ paddingLeft: "0px" }}>
+            <IconButton
+              sx={{ position: "absolute", top: 8, right: 8 }}
+              onClick={handleCloseModal}
+            >
+              <CloseIcon sx={{ color: "grey.greyColorFive" }} />
+            </IconButton>
+
+            {selectedCard && (
+              <Details
+                selectedCard={selectedCard}
+                onCloseDetails={handleCloseModal}
+              />
+            )}
+          </div>
+        </Modal>
       </Layout>
-
-      <Modal open={detailsVisible} onClose={handleCloseModal}>
-        <div style={{ paddingLeft: "0px" }}>
-          <IconButton
-            sx={{ position: "absolute", top: 8, right: 8 }}
-            onClick={handleCloseModal}
-          >
-            <CloseIcon sx={{ color: "grey.greyColorFive" }} />
-          </IconButton>
-
-          {selectedCard && (
-            <Details
-              selectedCard={selectedCard}
-              onCloseDetails={handleCloseModal}
-            />
-          )}
-        </div>
-      </Modal>
 
       <Footer style={{ marginTop: "20px", width: "100%" }} />
     </div>
