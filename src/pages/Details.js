@@ -30,6 +30,15 @@ const Details = ({ selectedCard }) => {
     DemoURL,
   } = selectedCard;
 
+  function splitTextIntoParagraphs(text) {
+    const paragraphs = text.split("\n").map((paragraph, index) => (
+      <p key={index} style={{ margin: "10px 0", textAlign: "justify" }}>
+        {paragraph}
+      </p>
+    ));
+    return paragraphs;
+  }
+
   return (
     <div style={{ background: "#f0f0f0", overflowY: "auto", height: "100vh" }}>
       <Container maxWidth="lg" style={{ padding: "20px" }}>
@@ -66,7 +75,7 @@ const Details = ({ selectedCard }) => {
           <Grid item xs={12} md={6}>
             <Card>
               <CardContent>
-                <Box marginTop={2}>
+                <Box>
                   <Typography variant="body2" color="textSecondary">
                     <span style={{ fontWeight: "bold", color: "black" }}>
                       Type -
@@ -89,7 +98,7 @@ const Details = ({ selectedCard }) => {
                     <span style={{ fontWeight: "bold", color: "black" }}>
                       Description -
                     </span>{" "}
-                    {Description}
+                    {splitTextIntoParagraphs(Description)}
                   </Typography>
                 </Box>
 
@@ -98,7 +107,7 @@ const Details = ({ selectedCard }) => {
                     <span style={{ fontWeight: "bold", color: "black" }}>
                       Details -
                     </span>{" "}
-                    {Details}
+                    {splitTextIntoParagraphs(Details)}
                   </Typography>
                 </Box>
 
@@ -117,7 +126,7 @@ const Details = ({ selectedCard }) => {
                           >
                             {tag.trim()}
                           </Link>
-                          {index <Tags.split(",").length - 1 ? ", " : ""}
+                          {index < Tags.split(",").length - 1 ? ", " : ""}
                         </span>
                       ))}
                     </Typography>

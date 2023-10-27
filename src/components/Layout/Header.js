@@ -57,7 +57,7 @@ const Header = () => {
         </li>
         <li>
           <NavLink to="/Assetshowcase">
-            <strong>AssetShowcase</strong>
+            <strong>Asset Showcase</strong>
           </NavLink>
         </li>
         <li onClick={handlePublicationClick} style={{ cursor: "pointer" }}>
@@ -140,7 +140,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink to="/Assetshowcase">
-                  <strong>AssetShowcase</strong>
+                  <strong>Asset Showcase</strong>
                 </NavLink>
               </li>
               <li

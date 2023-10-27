@@ -24,54 +24,6 @@ import Details from "./Details";
 
 import Footer from "../components/Layout/Footer";
 
-const SearchBox = ({ searchInput, handleSearchInputChange }) => {
-  return (
-    <Grid container alignItems="center" justifyContent="space-between">
-      <Grid item>
-        <Typography
-          variant="h5"
-          style={{
-            fontWeight: "bold",
-
-            paddingBottom: "10px",
-
-            textAlign: "left",
-
-            padding: "5px",
-
-            margin: "0",
-          }}
-        >
-          Proof Of Concept
-        </Typography>
-      </Grid>
-
-      <Grid item>
-        <TextField
-          type="text"
-          placeholder="Search..."
-          variant="outlined"
-          fullWidth
-          inputProps={{
-            style: {
-              color: "black",
-
-              padding: "8px 12px",
-
-              background: "transparent",
-
-              textAlign: "center",
-            },
-          }}
-          value={searchInput}
-          onChange={handleSearchInputChange}
-          style={{ marginBottom: "10px" }}
-        />
-      </Grid>
-    </Grid>
-  );
-};
-
 const Home = () => {
   const [filteredMenu, setFilteredMenu] = useState([]);
 
@@ -86,6 +38,9 @@ const Home = () => {
   const navigate = useNavigate();
 
   const [visibleItemCount, setVisibleItemCount] = useState(0);
+
+  const [showTitleCharacterByCharacter, setShowTitleCharacterByCharacter] =
+    useState(false);
 
   const fetchMenuData = () => {
     fetch("data/Assets.json")
@@ -111,6 +66,14 @@ const Home = () => {
       filteredMenu.filter((menu) => menu.HideItem === "false").length
     );
   }, [filteredMenu]);
+
+  useEffect(() => {
+    if (!showTitleCharacterByCharacter) {
+      setTimeout(() => {
+        setShowTitleCharacterByCharacter(true);
+      }, 1000); // Delay for 1 second before showing the title character by character
+    }
+  }, [showTitleCharacterByCharacter]);
 
   const handleSearchInputChange = (event) => {
     const inputValue = event.target.value;
@@ -150,10 +113,38 @@ const Home = () => {
     <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
       <Layout>
         <Container style={{ paddingTop: "25px", paddingBottom: "10px" }}>
-          <SearchBox
-            searchInput={searchInput}
-            handleSearchInputChange={handleSearchInputChange}
-          />
+          <Grid container alignItems="center" justifyContent="space-between">
+            <Grid item>
+              {showTitleCharacterByCharacter && (
+                <Typography variant="h5" style={{ fontWeight: "bold" }}>
+                  Proof Of Concept
+                </Typography>
+              )}
+            </Grid>
+
+            <Grid item>
+              <TextField
+                type="text"
+                placeholder="Search..."
+                variant="outlined"
+                fullWidth
+                inputProps={{
+                  style: {
+                    color: "black",
+
+                    padding: "8px 12px",
+
+                    background: "transparent",
+
+                    textAlign: "center",
+                  },
+                }}
+                value={searchInput}
+                onChange={handleSearchInputChange}
+                style={{ marginBottom: "10px" }}
+              />
+            </Grid>
+          </Grid>
 
           <Typography variant="body2">
             Showing {visibleItemCount} assets :

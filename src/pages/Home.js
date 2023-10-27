@@ -96,7 +96,7 @@ const Home = () => {
             style={isButtonClicked ? { ...styles.button, ...styles.buttonHover } : styles.button}
             onClick={handleButtonClick}
           >
-            <span style={styles.buttonText}>Assetshowcase</span>
+            <span style={styles.buttonText}>Asset Showcase</span>
           </button>
         </Link>
       </div>
