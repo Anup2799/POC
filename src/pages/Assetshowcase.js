@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import {
   Typography,
   Button,
@@ -13,45 +12,33 @@ import {
   TextField,
   IconButton,
 } from "@mui/material";
-
 import CloseIcon from "@mui/icons-material/Close";
-
 import { useNavigate } from "react-router-dom";
-
 import Layout from "../components/Layout/Layout";
-
 import Details from "./Details";
-
 import Footer from "../components/Layout/Footer";
 
 const Home = () => {
   const [filteredMenu, setFilteredMenu] = useState([]);
-
   const [menuList, setMenuList] = useState([]);
-
   const [selectedCard, setSelectedCard] = useState(null);
-
   const [detailsVisible, setDetailsVisible] = useState(false);
-
   const [searchInput, setSearchInput] = useState("");
-
   const navigate = useNavigate();
-
   const [visibleItemCount, setVisibleItemCount] = useState(0);
-
-  const [showTitleCharacterByCharacter, setShowTitleCharacterByCharacter] =
-    useState(false);
 
   const fetchMenuData = () => {
     fetch("data/Assets.json")
-      .then((response) => response.json())
-
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => {
         setMenuList(data);
-
         setFilteredMenu(data);
       })
-
       .catch((error) => {
         console.error("Error fetching local JSON:", error);
       });
@@ -67,23 +54,12 @@ const Home = () => {
     );
   }, [filteredMenu]);
 
-  useEffect(() => {
-    if (!showTitleCharacterByCharacter) {
-      setTimeout(() => {
-        setShowTitleCharacterByCharacter(true);
-      }, 1000); // Delay for 1 second before showing the title character by character
-    }
-  }, [showTitleCharacterByCharacter]);
-
   const handleSearchInputChange = (event) => {
     const inputValue = event.target.value;
-
     setSearchInput(inputValue);
-
     const filteredItems = menuList.filter((menu) =>
       menu.Title.toLowerCase().startsWith(inputValue.toLowerCase().slice(0, 3))
     );
-
     setFilteredMenu(filteredItems);
   };
 
@@ -98,14 +74,12 @@ const Home = () => {
   const handleDetailsClick = (menu) => {
     if (menu.HideItem === "false") {
       setSelectedCard(menu);
-
       setDetailsVisible(true);
     }
   };
 
   const handleCloseModal = () => {
     setDetailsVisible(false);
-
     navigate("/home");
   };
 
@@ -115,13 +89,10 @@ const Home = () => {
         <Container style={{ paddingTop: "25px", paddingBottom: "10px" }}>
           <Grid container alignItems="center" justifyContent="space-between">
             <Grid item>
-              {showTitleCharacterByCharacter && (
-                <Typography variant="h5" style={{ fontWeight: "bold" }}>
-                  Proof Of Concept
-                </Typography>
-              )}
+              <Typography variant="h5" style={{ fontWeight: "bold" }}>
+                Proof Of Concept
+              </Typography>
             </Grid>
-
             <Grid item>
               <TextField
                 type="text"
@@ -131,11 +102,8 @@ const Home = () => {
                 inputProps={{
                   style: {
                     color: "black",
-
                     padding: "8px 12px",
-
                     background: "transparent",
-
                     textAlign: "center",
                   },
                 }}
@@ -145,12 +113,10 @@ const Home = () => {
               />
             </Grid>
           </Grid>
-
           <Typography variant="body2">
-            Showing {visibleItemCount} assets :
+            Showing {visibleItemCount} assets:
           </Typography>
         </Container>
-
         <Container style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <Grid container spacing={2}>
             {filteredMenu.map(
@@ -167,9 +133,7 @@ const Home = () => {
                     <Card
                       style={{
                         borderRadius: "15px",
-
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
-
                         margin: "10px",
                       }}
                       onMouseEnter={handleCardHover}
@@ -180,7 +144,6 @@ const Home = () => {
                         image={menu.ImageURL}
                         title={menu.Title}
                       />
-
                       <CardContent
                         style={{ padding: "10px", marginBottom: "0" }}
                       >
@@ -190,19 +153,14 @@ const Home = () => {
                           component="div"
                           style={{
                             fontWeight: "bold",
-
                             color: "black",
-
                             whiteSpace: "nowrap",
-
                             overflow: "hidden",
-
                             textOverflow: "ellipsis",
                           }}
                         >
                           {menu.Title}
                         </Typography>
-
                         <Typography
                           variant="body2"
                           color="text.secondary"
@@ -210,7 +168,6 @@ const Home = () => {
                         >
                           {menu.Type}
                         </Typography>
-
                         <Typography
                           variant="body2"
                           color="text.secondary"
@@ -219,26 +176,18 @@ const Home = () => {
                           Summary - {menu.Summary}
                         </Typography>
                       </CardContent>
-
                       <CardActions style={{ padding: "5px", marginTop: "5px" }}>
                         <Button
                           size="small"
                           onClick={() => handleDetailsClick(menu)}
                           style={{
                             backgroundColor: "transparent",
-
                             color: "#007bff",
-
                             borderRadius: "20px",
-
                             margin: "5px",
-
                             textTransform: "none",
-
                             boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-
                             border: "2px solid #007bff",
-
                             fontWeight: "bold",
                           }}
                         >
@@ -251,7 +200,6 @@ const Home = () => {
             )}
           </Grid>
         </Container>
-
         <Modal open={detailsVisible} onClose={handleCloseModal}>
           <div style={{ paddingLeft: "0px" }}>
             <IconButton
@@ -260,7 +208,6 @@ const Home = () => {
             >
               <CloseIcon sx={{ color: "grey.greyColorFive" }} />
             </IconButton>
-
             {selectedCard && (
               <Details
                 selectedCard={selectedCard}
@@ -270,7 +217,6 @@ const Home = () => {
           </div>
         </Modal>
       </Layout>
-
       <Footer style={{ marginTop: "20px", width: "100%" }} />
     </div>
   );
