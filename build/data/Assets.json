@@ -1,0 +1,301 @@
+[
+  {
+    "ID": "E1010821",
+
+    "Title": "Digital Asset NFT Platform",
+
+    "Type": "Customer Co-innovation Project | Case Study.",
+
+    "Summary": " NFT Tokenization for Digital Art - Leading Global Auction House.",
+
+    "Description": "Zensar has partnered with a leading Global Auction House, to develop their Digital Asset NFT Platform which offered a potential $1 billion vertical.As a co-innovation solution partner, we developed the solution to mint NFTs securely for high-worth digital art.",
+
+    "ImageURL": "images/e101.jpg",
+
+    "VideoURL": "VideoURLs/MaintainVideoURL.mp4",
+
+    "DemoURL": "DemoURLs/MaintainDemoURL.html",
+
+    "Details": "Zensar has partnered with a leading Global Auction House, to develop their Digital Asset NFT Platform which offered a potential $1 billion vertical. As a co-innovation solution partner, we proposed options & a roadmap and developed the platform (web3 application) to mint NFTs securely for high-value artworks, including digital art.\nThe solution was developed on the Ethereum Blockchain, and tokens minted as per ERC-721/1155 OpnZepellin standards, including an integration with the OpenSea NFT Marketplace.",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "nft, non-fungible, token, ethereum,  public, blockchain, digital art, platform, co-innovation, erc721, erc1155, openzepellin, opensea, marketplace",
+
+    "TechTags": "mern stack, web3, solidity, javascript, metamask, ethereum/testnet, smart contracts, amazon/aws cloud",
+
+    "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "E1031121",
+
+    "Title": "DLT Marketplace Solution (MVP) | Capital Markets",
+
+    "Type": "Solution Asset | Differentiator.",
+
+    "Summary": " DLT Marketplace Solution using Blockchain.",
+
+    "Description": "As a joint effort between ZenLabs Blockchain Solutions Group and our BFS Industry Solutions Group (ISG), we developed an innovative solution - a futuristic marketplace built on Distributed Ledger Technology (DLT) and enabled using Blockchain. The solution is built to help infuse liquidity into illiquid assets such as high value, illiquid bonds in capital markets (but can be extended to other domains) by creating a marketplace.",
+
+    "ImageURL": "images/e103.jpg",
+
+    "VideoURL": "VideoURLs/WifiVideoURL.mp4",
+
+    "DemoURL": "DemoURLs/WifiDemoURL.html",
+
+    "Details": "As a joint effort between ZenLabs Blockchain Solutions Group and our BFS Industry Solutions Group (ISG), we developed an innovative solution - a futuristic marketplace built on Distributed Ledger Technology (DLT) and enabled using Blockchain. The solution is built to help infuse liquidity into illiquid assets such as high value, illiquid bonds in capital markets (but can be extended to other domains) by creating a marketplace. Institutions can tokenize their illiquid assets, and leverage blockchain technology to reduce settlement cycles, transaction costs and dependence on intermediaries.\nThe DLT Marketplace solution comprises three key components: Asset Tokenization, Marketplace, and Settlement. For more details, please see further details.",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "nft, non-fungible, token, distributed ledger, capital market, illiquid bond, ethereum,  public, blockchain, platform, innovation, erc721, erc1155, openzepellin, marketplace, settlement, cbdc, currency",
+
+    "TechTags": "web3, dlt, mern stack, solidity, rest/api, javascript, hardhat, truffle, metamask, ethereum/testnet, smart contracts, razorpay, vault, oracle, amazon/aws, devops",
+
+    "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
+
+    "HideItem": "True"
+  },
+
+  {
+    "ID": "E1020222",
+
+    "Title": "NFT Minting for Hyperluxury Brand",
+
+    "Type": "End-to-end Blockchain Solution Partner | Case Study.",
+
+    "Summary": " End-to-end implementation Partner for NFT Minting solution for premium collectibles.",
+
+    "Description": "The client, a hyperluxury brand, was looking for a partner to help them build an NFT Minting solution, as they looked to drive new monetization opportunities. Zensar worked as an end-to-end implementation partner for designing, developing, deploying and maintaining the public Blockchain-based solution to drive successful monetization using NFTs.",
+
+    "ImageURL": "images/e102.jpg",
+
+    "VideoURL": "VideoURLs/WifiVideoURL.mp4",
+
+    "DemoURL": "DemoURLs/WifiDemoURL.html",
+
+    "Details": "The client, a hyperluxury brand, was looking for a partner to help them build an NFT Minting solution, as they looked to drive new monetization opportunities. Zensar worked as an end-to-end implementation partner for designing, developing, deploying and maintaining the [web3] solution, through a rapid and flawless execution, bringing Blockchain Solution Development, Agile/DevOps and Cloud execution capabilities together for a seamless customer experience.\nThe [web3] solution comprised multiple NFT Types, multi-factor security, testnet & mainnet deployment of smart contracts and business models to support auction-based buying and redemption, as well as NFT marketplace integration.",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "nft, non-fungible, token, ethereum,  public, blockchain, digital collectible, platform, solution partner, erc721, openzepellin, opensea, marketplace",
+
+    "TechTags": "web3, mern stack, solidity, rest/api, javascript, hardhat, truffle, metamask, ethereum/testnet, ethereum/mainnet, smart contracts, multifactor, amazon/aws cloud, agile, devops",
+
+    "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "H2010818",
+
+    "Title": "Enterprise Blockchain for Zensar's Digital Finance Initiative",
+
+    "Type": "Enterprise Blockchain - Early Adoption | PoC.",
+
+    "Summary": " Zensar's enterprise blockchain-based middleware solution to track sub-contractor's lifecycle management/optimization.",
+
+    "Description": "As part of Zensar's own Digital Finance initiatives, the Finance Team was keen to improve and track sub-contractor lifecycle management, which was identified as an area that lacked traceability, leading to cost leakages and audit & compliance challenges. Zensar adopted an enterprise Blockchain-based implementation, deployed internally, to enable full traceability for the lifecycle of a sub-contractor. The solution provided an intelligent middleware using Hyperledger Fabric as a secure, permissioned Blockchain within the enterprise, using smart contracts for auto-enforcement and auditability.\n The solution enabled data transparency and visibility across entities, significantly reducing the need for reconciliations, improving process efficiencies by an order of magnitude.",
+
+    "ImageURL": "images/h201.jpg",
+
+    "VideoURL": "VideoURLs/InfraVideoURL.mp4",
+
+    "DemoURL": "DemoURLs/InfraDemoURL.html",
+
+    "Details": "As part of Zensar's own Digital Finance initiatives, the Finance Team was keen to improve and track sub-contractor lifecycle management, which was identified as an area that lacked traceability, leading to cost leakages and audit & compliance challenges. Zensar adopted an enterprise Blockchain-based implementation, deployed internally, to enable full traceability for the lifecycle of a sub-contractor, given a higher than industry average of sub-contractors being deployed on projects.\nThe solution provided an intelligent middleware using Hyperledger Fabric as a secure, permissioned Blockchain within the enterprise, using smart contracts for auto-enforcement and auditability. The solution enabled data transparency and visibility across entities (such as project management, talent management, etc.) in the value chain, significantly reducing the need for reconciliations, improving process efficiencies by an order of magnitude.The live system has helped the Finance Team to reduce revenue leakages through accurate billing for sub-contractor efforts.",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "hyperledger,  fabric, private, blockchain, permissioned,token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment",
+
+    "TechTags": "mean stack, apis, nodejs, couchdb, fabric/network, smart contracts, chaincode, private cloud, docker, container",
+
+    "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "H2021219",
+
+    "Title": "Blockchain-based Intelligent Middleware Solution for Global Capacity Mapping",
+
+    "Type": "Enterprise Blockchain as middleware for Global Non-profit | Case Study.",
+
+    "Summary": " Zensar's Blockchain-based middleware solution implementation for a Global Non-profit.",
+
+    "Description": "Following Zensar's own implementation of enterprise blockchain-based middleware for tracking sub-contractor lifecycle management, Zensar was called upon to implement the solution for a Global Non-profit, to enable global capacity mapping [of volunteers], creating visibility into global and local pools.\nThe Hyperledger-based solution enabled audit trail of on-boarding activities, easy visualization of global capacities while ensuring privacy of individual pools. The solution was initially piloted across APAC & Australia, with a plan to roll it out across 180+ countries, as per the client's roadmap.\n\nThe solution was expected to impact the on-boarding of 8000+ staff and 27,000 contractors at a global scale, helping to drive efficiencies and savings in the operations.",
+
+    "ImageURL": "images/h202.jpg",
+
+    "VideoURL": "VideoURLs/InfraVideoURL.mp4",
+
+    "DemoURL": "DemoURLs/InfraDemoURL.html",
+
+    "Details": "Following Zensar's own implementation of enterprise blockchain-based middleware for tracking sub-contractor lifecycle management, Zensar's Blockchain Team was selected to implement a blockchain-based solution for a Global Non-profit, to enable global capacity mapping [of volunteers], creating visibility into global and local pools.\nThe solution was designed to enable improved visibility of country-specific capacities of volunteer pools, yet allowing individual country offices to maintain their autonomy and controls on the local skill capacities, but facilitate the sourcing from global capacity pools.\n\nThe secure, transparent and permissioned blockchain solution, based on Zensar's Blockchain-based middleware solution was initially piloted across APAC & Australia, with a plan to roll it out across 180+ countries, as per the client's roadmap. The expected scale of operation for the solution over the course of its rollout was global, helping to drive impactful efficiencies and savings in the operations.",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "hyperledger,  fabric, private, blockchain, permissioned,token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment",
+
+    "TechTags": "mean stack, apis, nodejs, couchdb, fabric/network, smart contracts, chaincode, private cloud, docker, container",
+
+    "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "H2031022",
+
+    "Title": "Multi-party Recon & Settlement for BNPL Payments, using HLF",
+
+    "Type": "Solution Asset | Differentiator",
+
+    "Summary": " Customer Co-innovation for modernizing payment processing for Multi-party Recon & Settlement | Case Study.",
+
+    "Description": "Zensar partnered with a leading US Bank to co-innovate, to develop and DemoURLnstrate a modern approach to streamline recon and settlement for Buy Now Pay Later (BNPL) Payments, using enterprise blockchain/DLT - Hyperledger Fabric (HLF). The key use cases within the solution included Merchant On-boarding, Settlement Transaction submission (multiple modes) and near real-time endorsement, transparency and traceability.\nThe solution not only DemoURLnstrated the key capabilities of the HLF/permissioned blockchain technology, but also DemoURLnstrated the potential to drive disintermediation in the financial ecosystem, ensure flexibility with regards to data privacy and transparency amongst member participants of the enterprise network, and improve efficiency through the potential for automated transaction processing.",
+
+    "ImageURL": "images/h203.jpg",
+
+    "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
+
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "hyperledger,  fabric, private, blockchain, permissioned,token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment",
+
+    "Details": "The solution was developed using permissioned Blockchain - Hyperledger Fabric, smart contract/chain-code based automation, data privacy and controls using policies and PDCs; the solution was deployed on private and public cloud using Docker/Kubernetes containerization options.",
+
+    "TechTags": "mean stack, apis, nodejs, couchdb, fabric/network, smart contracts, chaincode, private cloud, aws cloud, docker, kubernetes, pdc, private data collection, container",
+
+    "Last Update": "by: saurabh bobde, when: sep 2023; by: xyz, when: aug 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "P3011013",
+
+    "Title": "NFT-based Event Ticketing",
+
+    "Type": "Solution Asset | Differentiator",
+
+    "Summary": "Modernizing the conventional mode for event ticketing for the Web3 era (PoC)",
+
+    "Description": "Ticket sales for events such as music concerts, celebrity shows, or sports have tremendous following from fans. The ecosystem for managing ticket sales for these, including the secondary market, has been the forte of large, centralized entities for decades. With the advent of a decentralized (Web3) paradigm, event ticketing is likely to transform using NFTs (secure tokens on a blockchain).\nThis solution offers a new-age event ticketing system in the Web3 era, developed on a permission-less blockchain, enabling organizers to seamlessly list events, and for users to purchase event tickets represented as NFTs.",
+
+    "ImageURL": "images/p301.png",
+
+    "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
+
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "nft, token, event ticketing, sports, music, concert, secondary sale,token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment",
+
+    "Details": "The solution (developed as a PoC) leverages the blockchain's decentralized and secure environment to facilitate transparent and tamper-resistant transactions between ticket sellers and buyers, and enabling secondary sale revenues to organizers. Designed as a Web3 solution, it includes OpenZeppelin-smart contracts and Alchemy as a middleware to read data from the blockchain.\nThe smart contracts are compliant with the ERC721 specifications, guaranteeing that assets are safely represented as NFTs. Wagmi is used to handle state and submit transactions to the blockchain, improving state management and transaction functionality. To further improve the capabilities of the system, WalletConnect is also used to connect and maintain wallet connections. Lastly, a custom-built events ticket marketplace for the NFT Tickets is also included as part of the solution.",
+
+    "TechTags": "mern stack, APIs, nodejs, alchemy, wagmi, smart contracts, walletConnect, hardhat, web3, solidity, polygon/testnet, javascript, metamask",
+
+    "Last Update": "by: Nimesh Shah, when: 13 Oct 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "P3021013",
+
+    "Title": "NFT Airdrops",
+
+    "Type": "Solution Asset | Differentiator",
+
+    "Summary": "Enhancing user/brand experiences via NFT airdrops | PoC",
+
+    "Description": "Brands are beginning to venture into the next era of the web, i.e. Web3, that is rapidly evolving. Digital collectibles are becoming a popular theme for users, a shift from the themes of physical collectibles such as coins, stamps, etc.\n\nWhile NFT marketplaces provide avenues for buying/selling NFTs through a familiar model of sell and buy, often times, users may be surprised or rewarded by benefiting from \"winning\" some NFTs.\nIn simple terms, this model of giving away a limited number of tokens (NFTs) to selected or random users, is what is the basis of airdrops. This airdrop PoC that is developed on a permissionless blockchain, provides NFT creators with a way to reward their most dedicated supporters by distributing NFTs from their collections via the blockchain.\n\nIn addition, the PoC allows users the option to create their own NFT collections. It also allows enthusiasts to join waiting lists for these collections, where the top 10 individuals in each list receive the NFTs. This approach ensures fairness and interactivity within the NFT creator community. And all this is enabled by the underlying smart contracts that execute on the blockchain.",
+
+    "ImageURL": "images/p302.png",
+
+    "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
+
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "nft, token, collections, collectibles, airdrop, blockchain, permissionless,token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment",
+
+    "Details": "This PoC integrates Web3 technologies for an intuitive user experience and runs on a permission-less blockchain. Alchemy reads data from the blockchain by acting as a middleware. ERC721-compliant smart contracts that make use of the OpenZeppelin library have been carefully designed to guarantee the safe representation of assets as NFTs.\n Collection owners within this ecosystem are able to airdrop NFTs to the top users who have added themselves to a collection's waiting list.The utilization of the NFT collections is encouraged, and the user experience is enhanced by this airdrop technique.",
+
+    "TechTags": "mern stack, APIs, nodejs, alchemy, wagmi, smart contracts, walletConnect, hardhat, polygon/testnet, web3, solidity, erc721, javascript, metamask",
+
+    "Last Update": "by: Nimesh Shah, when: 13 Oct 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "P3031013",
+
+    "Title": "NFT Marketplace | NFT Auctions | Airdrops",
+
+    "Type": "Solution Asset | Differentiator",
+
+    "Summary": "NFT Marketplace (MVP) | Auctions | Airdrops | PoC",
+
+    "Description": "NFTs are a modern approach to securely monetize assets of value in a digital way. Once minted, NFTs are typically listed for offer on popular marketplaces. However, brands may prefer to build (or integrate) their own applications/marketplaces.\n\nThis custom NFT marketplace, which was created on a permissionless blockchain, demonstrates the capabilities to build such a marketplace, using the best practices and standards, as applicable. The platform enables easy access to users, to purchase, sell, and create NFT collections.\nThis marketplace also demonstrates the ability to support airdrops, a popular distribution model for NFTs. Further, the solution offers the ability to enable customized NFT-auctions (English or Dutch) to NFT owners, according to one's preference.",
+
+    "ImageURL": "images/p303.png",
+
+    "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
+
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "nft, token, marketplace, auction, airdrop, blockchain, permissionless,token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment",
+
+    "Details": "This marketplace MVP solution is built on a permission-less blockchain and harnesses some core Web3 capabilities. Alchemy expertly serves as a middleware, enabling efficient data reading from the blockchain. Smart contracts, adhering to the ERC721 standards and crafted with the OpenZeppelin library, provide a best practice approach. The marketplace brings together both sellers and buyers, where sellers can create collections, and buyers can purchase NFTs from these collections.\nAdditionally, users can participate in the excitement of adding themselves to waitlists for available NFT collections, opening doors for potential airdrops from the sellers to the most engaged users.\n\nNFT owners also have the opportunity to sell their assets through auctions, with the winning bidder receiving the NFT when the auction ends.\n\nWalletConnect plays a crucial role in establishing and maintaining wallet connections. The smart contracts enable various life cycle stages of the NFT, ensuring a smooth, secure, and trusted exchange of value via the marketplace.",
+
+    "TechTags": "mern stack, APIs, nodejs, alchemy, wagmi, smart contracts, openzepellin, walletConnect, hardhat, polygon/testnet, web3, solidity, erc721, javascript, metamask",
+
+    "Last Update": "by: Nimesh Shah, when: 13 Oct 2023",
+
+    "HideItem": "false"
+  },
+
+  {
+    "ID": "P3041013",
+
+    "Title": "Value exchange via utility tokens in Hospitality (Hotels)",
+
+    "Type": "Solution Asset | Differentiator",
+
+    "Summary": "Unlocking Hotel Services with Utility tokens for new experiences | PoC",
+
+    "Description": "Utility token is a blockchain-based digital token that is used within a hotel ecosystem (hospitality industry) to access and pay for various services and benefits. These tokens are designed to facilitate transactions and interactions within the hotel, offering a range of benefits to both guests and the hotel management.",
+
+    "ImageURL": "images/p304.png",
+
+    "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
+
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+
+    "IconURL": "logo/tag.png",
+
+    "Tags": "token, utility, hotel, hospitality, rewards, access, loyalty, experience, premium, services, payment,nft, token, marketplace, auction, airdrop, blockchain, permissionless",
+
+    "Details": "The hospitality industry is always seeking avenues to enrich the experience they can offer to their customers, and more so, as experiences for the modern era are digitally enabled. With the emergence of Web3, new avenues of enabling such experiences are also emerging.\nReward Programs: Utility tokens can be used to reward loyal guests for their continued patronage. Guests earn tokens for each stay or purchase within the hotel's ecosystem. These tokens can then be redeemed for discounts, room upgrades, or other perks.\nPayment for Services: Guests can use utility tokens to pay for various services within the hotel, such as room service, spa treatments, or restaurant meals. This provides a convenient and secure payment method, especially for international travelers.\nAccess Control: Utility tokens can be integrated with the hotel's access control system, allowing guests to use tokens to unlock their rooms, access specific amenities, or use hotel facilities like gyms or swimming pools. Utility tokens open up avenues for engaging customers through modern and innovative models geared for a digital-first experience.",
+
+    "TechTags": "mern stack, APIs, nodejs, alchemy, wagmi, smart contracts, walletConnect, hardhat, polygon/testnet, web3, solidity, javascript, metamask",
+
+    "Last Update": "by: Nimesh Shah, when: 13 Oct 2023",
+
+    "HideItem": "false"
+  }
+]
