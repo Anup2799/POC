@@ -164,7 +164,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "http://172.16.10.60:2406/art-site",
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
 
     "IconURL": "logo/tag.png",
 
@@ -194,7 +194,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "http://172.16.10.60:2406/event-site",
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
 
     "IconURL": "logo/tag.png",
 
@@ -224,7 +224,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "http://172.16.10.60:2406/art-site",
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
 
     "IconURL": "logo/tag.png",
 
@@ -254,7 +254,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "http://172.16.10.60:2406/",
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
 
     "IconURL": "logo/tag.png",
 
@@ -284,7 +284,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "http://172.16.10.60:2406/art-site",
+    "DemoURL": "DemoURLs/Hum1DemoURL.html",
 
     "IconURL": "logo/tag.png",
 

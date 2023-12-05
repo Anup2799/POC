@@ -80,7 +80,7 @@ const Home = () => {
 
   const handleCloseModal = () => {
     setDetailsVisible(false);
-    navigate("/Assetshowcase");
+    navigate("/home");
   };
 
   return (
