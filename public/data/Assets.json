@@ -194,7 +194,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+    "DemoURL": "http://172.16.10.60:2406/event-site",
 
     "IconURL": "logo/tag.png",
 
@@ -224,7 +224,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+    "DemoURL": "http://172.16.10.60:2406/art-site",
 
     "IconURL": "logo/tag.png",
 
@@ -254,7 +254,7 @@
 
     "VideoURL": "VideoURLs/Hum1VideoURL.mp4",
 
-    "DemoURL": "DemoURLs/Hum1DemoURL.html",
+    "DemoURL": "http://172.16.10.60:2406/",
 
     "IconURL": "logo/tag.png",
 
