@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c32cdf84.css",
+    "main.js": "/static/js/main.bc2982da.js",
+    "static/js/787.d5b2bec2.chunk.js": "/static/js/787.d5b2bec2.chunk.js",
+    "static/media/Zen.png": "/static/media/Zen.e2e1f860d38f2a86da1b.png",
+    "index.html": "/index.html",
+    "main.c32cdf84.css.map": "/static/css/main.c32cdf84.css.map",
+    "main.bc2982da.js.map": "/static/js/main.bc2982da.js.map",
+    "787.d5b2bec2.chunk.js.map": "/static/js/787.d5b2bec2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c32cdf84.css",
+    "static/js/main.bc2982da.js"
+  ]
+}
