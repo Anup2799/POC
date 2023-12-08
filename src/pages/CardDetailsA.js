@@ -1,76 +1,85 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
   Typography,
   Button,
   makeStyles,
   ThemeProvider,
+  Grid,
 } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
+
+import Footer from "../components/Layout/Footer";
+import Layout from "../components/Layout/Layout";
 
 const theme = createTheme();
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  cardImageContainer: {
-    maxWidth: "100%",
-    overflow: "hidden",
-    borderRadius: theme.spacing(1),
-  },
-  cardImage: {
-    width: "100%",
-    height: "auto",
-    borderRadius: theme.spacing(1),
-  },
-  detailContainer: {
-    marginLeft: theme.spacing(2),
+  container: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
+    padding: theme.spacing(2),
+    position: "relative",
+    marginTop: theme.spacing(0.5),
+  },
+  closeButton: {
+    position: "absolute",
+    top: theme.spacing(1),
+    right: theme.spacing(1),
+    cursor: "pointer",
+    color: "white",
+    background: "rgba(255, 0, 0, 0.7)",
+    borderRadius: "50%",
+    padding: theme.spacing(0.5),
+    zIndex: 1,
+  },
+  title: {
+    fontSize: "2rem",
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "black",
+    margin: 0,
+  },
+  detailContainer: {
+    marginTop: theme.spacing(1),
   },
   detailItem: {
     margin: theme.spacing(1, 0),
-    textAlign: "justify",
-  },
-  bold: {
-    fontWeight: "bold",
-  },
-  gridContainer: {
-    display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: theme.spacing(4),
-    [theme.breakpoints.up("sm")]: {
-      gridTemplateColumns: "1fr 1fr",
+    color: "black",
+    "& p": {
+      marginBottom: theme.spacing(1),
     },
+  },
+  clickableText: {
+    color: "#2196f3",
+    textDecoration: "none",
+    cursor: "pointer",
+  },
+  image: {
+    width: "100%",
+    maxWidth: "600px",
+    height: "auto",
+    borderRadius: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+  },
+  button: {
+    width: "90%",
+    margin: theme.spacing(1, 0.5),
   },
   buttonContainer: {
     display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginTop: theme.spacing(2),
-  },
-  button: {
-    width: "calc(33.33% - 8px)",
-    margin: theme.spacing(1),
-  },
-  videoDemoButton: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    width: "100%",
-    marginTop: theme.spacing(1),
-    justifyContent: "space-between",
+    justifyContent: "center",
+    padding: theme.spacing(1, 0),
   },
-  videoDemoButtonItem: {
-    width: "calc(49% - 4px)",
-    margin: theme.spacing(1),
-    textTransform: "none",
+  fixedFooter: {
+    position: "fixed",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    zIndex: 1000,
   },
 }));
 
@@ -86,6 +95,18 @@ const CardDetailsA = ({ onClose }) => {
       .then((data) => {
         const selectedCard = data.find((item) => item.ID === cardId);
         if (selectedCard) {
+          selectedCard.Description = selectedCard.Description
+            ? selectedCard.Description.split("\n").map((para, index) => (
+              <p key={index}>{para}</p>
+            ))
+            : null;
+
+          selectedCard.Details = selectedCard.Details
+            ? selectedCard.Details.split("\n").map((para, index) => (
+              <p key={index}>{para}</p>
+            ))
+            : null;
+
           setDetailedCard(selectedCard);
         }
       })
@@ -93,122 +114,6 @@ const CardDetailsA = ({ onClose }) => {
         console.error("Error fetching data:", error);
       });
   }, [cardId]);
-
-  const renderDetailItem = (label, value, additionalClass) => {
-    if (label === "Video" || label === "Demo") {
-      return (
-        <Button
-          variant="contained"
-          color="primary"
-          className={`${classes.detailItem} ${classes.videoDemoButtonItem} ${additionalClass}`}
-          onClick={() => window.open(value, "_blank")}
-        >
-          {`${label.charAt(0).toUpperCase()}${label.slice(1).toLowerCase()}`}
-        </Button>
-      );
-    }
-
-    if (label === "Tags" || label === "TechTags") {
-      const tagList = value ? value.split(',') : [];
-      const iconURL = detailedCard.IconURL || "";
-
-      if (iconURL) {
-        return (
-          <div className={classes.detailItem} key={label}>
-            <img
-              src={iconURL}
-              alt={`${label} Icon`}
-              style={{ width: '20px', height: '20px', marginRight: '4px' }}
-            />
-            <strong>{label}:</strong>
-            {tagList.map((tag, index) => (
-              <Button
-                key={index}
-                variant="text"
-                style={{ color: '#0276aa', textTransform: 'none', marginRight: '4px' }}
-                onClick={() => window.open(`/tag/${tag}`, "_blank")}
-              >
-                {tag}
-              </Button>
-            ))}
-          </div>
-        );
-      } else {
-        return (
-          <div className={classes.detailItem} key={label}>
-            <strong>{label}:</strong>
-            {tagList.map((tag, index) => (
-              <Button
-                key={index}
-                variant="text"
-                style={{ color: '#0276aa', textTransform: 'none', marginRight: '4px' }}
-                onClick={() => window.open(`/tag/${tag}`, "_blank")}
-              >
-                {tag}
-              </Button>
-            ))}
-          </div>
-        );
-      }
-    }
-
-    if (label === "IconURL") {
-      return null;
-    }
-
-    if (label === "Type" || label === "Summary" || label === "Tags" || label === "TechTags") {
-      return (
-        <div className={classes.detailItem} key={label}>
-          <strong>{label}:</strong>
-          <Typography
-            variant="body1"
-            className={classes.detailItem}
-            style={{ whiteSpace: 'pre-line' }}
-          >
-            {value}
-          </Typography>
-        </div>
-      );
-    }
-
-    if (label === "Description" || label === "Details") {
-      if (value) {
-        const paragraphs = value.split('\n').map((paragraph, index) => (
-          <Typography
-            key={index}
-            variant="body1"
-            className={classes.detailItem}
-            style={{ whiteSpace: 'pre-line' }}
-          >
-            {paragraph}
-          </Typography>
-        ));
-
-        return (
-          <div key={label} className={classes.detailItem}>
-            <strong>{label}:</strong>
-            {paragraphs}
-          </div>
-        );
-      }
-
-      return null;
-    }
-
-    if (value) {
-      return (
-        <Typography
-          variant="subtitle1"
-          className={classes.detailItem}
-          key={label}
-        >
-          <strong>{label}:</strong> {value}
-        </Typography>
-      );
-    }
-
-    return null;
-  };
 
   const handleClose = () => {
     if (typeof onClose === "function") {
@@ -220,58 +125,121 @@ const CardDetailsA = ({ onClose }) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Dialog open={true} onClose={handleClose} fullWidth maxWidth="md">
-        {detailedCard && (
-          <>
-            <DialogTitle className={classes.title}>
-              {detailedCard.Title}
-            </DialogTitle>
-            <DialogContent className={classes.gridContainer}>
-              <div className={classes.cardImageContainer}>
-                <img
-                  src={detailedCard.ImageURL}
-                  alt={detailedCard.Title}
-                  className={classes.cardImage}
-                />
+    <Layout>
+      <ThemeProvider theme={theme}>
+        <div className={classes.container}>
+          {detailedCard && (
+            <>
+              <Typography className={classes.title} variant="h6">
+                {detailedCard.Title}
+              </Typography>
+              <div className={classes.closeButton} onClick={handleClose}>
+                X
               </div>
-              <div className={classes.detailContainer}>
-                {renderDetailItem("Type", detailedCard.Type)}
-                {renderDetailItem("Summary", detailedCard.Summary)}
-                {renderDetailItem("Description", detailedCard.Description)}
-                {renderDetailItem("Details", detailedCard.Details)}
-                {renderDetailItem("Tags", detailedCard.Tags)}
-                {renderDetailItem("TechTags", detailedCard.TechTags)}
-                <div className={classes.buttonContainer}>
-                  <div className={classes.videoDemoButton}>
-                    {renderDetailItem("Video", detailedCard.VideoURL, classes.videoDemoButtonItem)}
-                    {renderDetailItem("Demo", detailedCard.DemoURL, classes.videoDemoButtonItem)}
+              <Grid container className={classes.detailContainer} spacing={2}>
+                <Grid item xs={12} md={6}>
+                  <img
+                    src={detailedCard.ImageURL}
+                    alt={detailedCard.Title}
+                    className={classes.image}
+                  />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Typography variant="h6" className={classes.detailItem}>
+                    Type:
+                  </Typography>
+                  <Typography variant="body1" className={classes.detailItem}>
+                    {detailedCard.Type}
+                  </Typography>
+                  <Typography variant="h6" className={classes.detailItem}>
+                    Summary:
+                  </Typography>
+                  <Typography variant="body1" className={classes.detailItem}>
+                    {detailedCard.Summary}
+                  </Typography>
+                  <Typography variant="h6" className={classes.detailItem}>
+                    Description:
+                  </Typography>
+                  <div className={classes.detailItem}>
+                    {detailedCard.Description}
                   </div>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={handleClose}
-                    className={classes.button}
-                  >
-                    {`Close`.split("").map((char, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          fontSize: i === 0 ? "16px" : "12px",
-                          textTransform: i === 0 ? "uppercase" : "lowercase",
-                        }}
+                  <Typography variant="h6" className={classes.detailItem}>
+                    Details:
+                  </Typography>
+                  <div className={classes.detailItem}>
+                    {detailedCard.Details}
+                  </div>
+                  <Typography variant="h6" className={classes.detailItem}>
+                    <span style={{ marginRight: '8px' }}>
+                      <img
+                        src={detailedCard.IconURL}
+                        alt="Icon"
+                        style={{ width: '20px', height: '20px', marginRight: '4px' }}
+                      />
+                    </span>
+                    Tags:
+                  </Typography>
+                  <Typography variant="body1" className={classes.detailItem}>
+                    <Link
+                      to={`/tags/${detailedCard.Tags}`}
+                      className={classes.clickableText}
+                    >
+                      {detailedCard.Tags}
+                    </Link>
+                  </Typography>
+                  <Typography variant="h6" className={classes.detailItem}>
+                    <span style={{ marginRight: '8px' }}>
+                      <img
+                        src={detailedCard.IconURL}
+                        alt="Icon"
+                        style={{ width: '20px', height: '20px', marginRight: '4px' }}
+                      />
+                    </span>
+                    Tech Tags:
+                  </Typography>
+                  <Typography variant="body1" className={classes.detailItem}>
+                    <Link
+                      to={`/techtags/${detailedCard.TechTags}`}
+                      className={classes.clickableText}
+                    >
+                      {detailedCard.TechTags}
+                    </Link>
+                  </Typography>
+                  <div className={classes.buttonContainer}>
+                    <Grid item xs={12} md={4}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() =>
+                          window.open(detailedCard.VideoURL, "_blank")
+                        }
+                        className={classes.button}
                       >
-                        {char}
-                      </span>
-                    ))}
-                  </Button>
-                </div>
-              </div>
-            </DialogContent>
-          </>
-        )}
-      </Dialog>
-    </ThemeProvider>
+                        Video
+                      </Button>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() =>
+                          window.open(detailedCard.DemoURL, "_blank")
+                        }
+                        className={classes.button}
+                      >
+                        Demo
+                      </Button>
+                    </Grid>
+                  </div>
+                </Grid>
+              </Grid>
+            </>
+          )}
+        </div>
+      </ThemeProvider>
+
+      <Footer className={classes.fixedFooter} style={{ width: "100%" }} />
+    </Layout>
   );
 };
 

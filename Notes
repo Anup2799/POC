@@ -1,0 +1,5 @@
+npm install @material-ui/core@latest_version @material-ui/styles@latest_version
+ 
+npm install --force
+ 
+npm install --legacy-peer-deps

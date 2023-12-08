@@ -42,8 +42,9 @@ function Assets() {
   }, []);
 
   const filteredCards = cardsData.filter((card) =>
-    card.Title.toLowerCase().includes(searchInput.toLowerCase())
-  );
+  card.Title.toLowerCase().includes(searchInput.toLowerCase()) ||
+  card.Type.toLowerCase().includes(searchInput.toLowerCase())
+);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -71,7 +72,7 @@ function Assets() {
                 fontFamily: "Arial, sans-serif",
               }}
             >
-              Available Assets: PoCs, Case Studies and more -
+              Available Assets: PoCs, Case Studies and more 
             </Typography>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -105,7 +106,7 @@ function Assets() {
           </Grid>
 
           {filteredCards.map((card, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={6} key={index}>
               <Card
                 id={`card-${index}`}
                 style={{
@@ -141,7 +142,7 @@ function Assets() {
                   <Typography
                     variant="h6"
                     style={{
-                      fontSize: "12px",
+                      fontSize: "14px",
                       fontWeight: "bold",
                       margin: "10px 0",
                       color: "#0276aa",
