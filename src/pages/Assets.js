@@ -42,9 +42,10 @@ function Assets() {
   }, []);
 
   const filteredCards = cardsData.filter((card) =>
-  card.Title.toLowerCase().includes(searchInput.toLowerCase()) ||
-  card.Type.toLowerCase().includes(searchInput.toLowerCase())
-);
+    card.Title.toLowerCase().includes(searchInput.toLowerCase()) ||
+    card.Type.toLowerCase().includes(searchInput.toLowerCase())  ||
+    card.Summary.toLowerCase().includes(searchInput.toLowerCase()) 
+  );
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -72,7 +73,7 @@ function Assets() {
                 fontFamily: "Arial, sans-serif",
               }}
             >
-              Available Assets: PoCs, Case Studies and more 
+              Available Assets: PoCs, Case Studies and more
             </Typography>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -126,7 +127,11 @@ function Assets() {
                 onMouseLeave={() => {
                   document.getElementById(`card-${index}`).style.transform = "translateY(0)";
                 }}
-                onClick={() => handleCardClick(card)}
+                onClick={(e) => {
+                  if (!e.target.tagName.toLowerCase() === "img") {
+                    handleCardClick(card);
+                  }
+                }}
               >
                 <CardMedia
                   component="img"

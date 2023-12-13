@@ -37,8 +37,11 @@ function Patents() {
     card.Title.toLowerCase().includes(searchInput.toLowerCase())
   );
 
-  const handleCardClick = (card) => {
-    setSelectedCard(card);
+  const handleCardClick = (card, event) => {
+    const isImageClick = event.target.tagName.toLowerCase() === 'img';
+    if (!isImageClick) {
+      setSelectedCard(card);
+    }
   };
 
   const handleIconClick = (card) => {
@@ -117,7 +120,7 @@ function Patents() {
                     "scale(1)";
                 }}
                 id={`card-${index}`}
-                onClick={() => handleCardClick(card)}
+                onClick={(event) => handleCardClick(card, event)}
               >
                 <CardMedia
                   component="img"
@@ -174,7 +177,7 @@ function Patents() {
                     />
                     <Button
                       component={Link}
-                      to={`/abouturl/${card.AboutURL}`}
+                      to={`${card.AboutURL}`}
                       style={{
                         backgroundColor: "#000",
                         color: "#fff",

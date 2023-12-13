@@ -7,6 +7,7 @@ import Patents from "./pages/Patents";
 import CardDetailsA from "./pages/CardDetailsA";
 import CardDetails from "./pages/CardDetails";
 import CardDetailsW from "./pages/CardDetailsW";
+import ComingSoon from "./pages/ComingSoon";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/Assets" element={<Assets />} />
-
+          <Route path="/pages/ComingSoon" element={<ComingSoon />} />
           <Route path="/pages/whitepapers" element={<Whitepapers />} />
           <Route path="/pages/patents" element={<Patents />} />
           <Route path="/CardDetailsURLA/:cardId" element={<CardDetailsA />} />

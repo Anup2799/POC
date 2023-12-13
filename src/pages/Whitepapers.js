@@ -49,6 +49,11 @@ function Whitepaper() {
     setSelectedCard(null);
   };
 
+  const handleCardImageClick = (event, card) => {
+    event.stopPropagation();
+    navigate(card.ImageClickURL);
+  };
+
   return (
     <Layout>
       <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
@@ -129,12 +134,13 @@ function Whitepaper() {
                     height: "100%",
                     objectFit: "cover",
                   }}
+                  onClick={(event) => handleCardImageClick(event, card)}
                 />
                 <CardContent>
                   <Typography
                     variant="h6"
                     style={{
-                      fontSize: "13px", // Adjust the font size as needed
+                      fontSize: "13px",
                       fontWeight: "bold",
                       margin: "10px 0",
                       textAlign: "left",
